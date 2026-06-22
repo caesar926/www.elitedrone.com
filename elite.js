@@ -154,7 +154,7 @@
     floatingDonateBtn.textContent = 'Opening Facebook…';
     setTimeout(() => {
       window.open('https://www.facebook.com/EliteDroneRecrovery', '_blank', 'noopener');
-      
+       floatingDonateBtn.textContent = 'contact us';
       closeModal();
     }, 600);
   });
