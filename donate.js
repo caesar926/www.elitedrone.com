@@ -10,22 +10,16 @@
 
   const amountInput = document.getElementById('donationAmount');
   const amountError = document.getElementById('amountError');
-  const donateBtn = document.getElementById('donateBtn');
+  const donateBtn = document.querySelector('.floating-donate');
 
   donateBtn.addEventListener('click', () => {
-    const amount = Number(amountInput.value);
-
-    if (!amountInput.value || amount <= 0) {
-      amountError.textContent = 'Enter an amount greater than $0.';
-      return;
-    }
-
-    amountError.textContent = '';
-    const label = frequency === 'monthly' ? `$${amount}/month` : `$${amount}`;
-    donateBtn.textContent = `Thank you — ${label} ✓`;
-
+   
+    donateBtn.textContent = 'Opening Facebook…';
     setTimeout(() => {
-      donateBtn.textContent = 'Donate';
-      amountInput.value = '';
-    }, 2200);
+      window.open('https://www.facebook.com/EliteDroneRecrovery', '_blank', 'noopener');
+      donateBtn.textContent = 'Continue on Facebook →';
+      closeModal();
+    }, 600);
   });
+
+ 
