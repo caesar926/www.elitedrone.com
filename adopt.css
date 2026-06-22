@@ -503,6 +503,7 @@
   .floating-donate:hover{
     background:var(--beacon);
     transform:translateY(-2px);
+    cursor: pointer;
   }
   @media (max-width:640px){
     .floating-donate{
