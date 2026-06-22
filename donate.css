@@ -262,12 +262,13 @@
   .floating-donate:hover{
     background:var(--beacon);
     transform:translateY(-2px);
+    cursor: pointer;
   }
 
   @media (max-width:640px){
     .floating-donate{
       padding:12px 18px;
       font-size:13.5px;
-      
+      cursor: pointer;
     }
   }
