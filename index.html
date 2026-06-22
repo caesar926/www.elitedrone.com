@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Drone Recovery — We bring them home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="elite.css">
+</head>
+<body>
+
+<!-- shared icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="icon-paw" viewBox="0 0 100 100">
+      <ellipse cx="50" cy="66" rx="23" ry="18"/>
+      <ellipse cx="23" cy="38" rx="10.5" ry="13.5" transform="rotate(-24 23 38)"/>
+      <ellipse cx="43" cy="20" rx="10" ry="13"/>
+      <ellipse cx="65" cy="20" rx="10" ry="13"/>
+      <ellipse cx="82" cy="40" rx="10.5" ry="13.5" transform="rotate(24 82 40)"/>
+    </symbol>
+    <symbol id="icon-lamp" viewBox="0 0 40 40">
+      <circle cx="20" cy="13" r="8.5"/>
+      <g stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round">
+        <path d="M20 24 L13 37"/>
+        <path d="M20 24 L20 38"/>
+        <path d="M20 24 L27 37"/>
+      </g>
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24">
+      <g stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round">
+        <path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap nav-row">
+    <a href="#top" class="brand">
+      <img class="mark-img" src="data:image/jpeg;base64,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" alt="Elite Drone Recovery">
+      <span class="word-stack">
+        <span class="word-main">ELITE</span>
+        <span class="word-sub">DRONE RECOVERY</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="#board">The Board</a>
+      <a href="#adopt">Adopt</a>
+      <a href="#donate">Pay</a>
+      <a href="https://www.facebook.com/EliteDroneRecovery">Contact us</a>
+    </nav>
+    <button class="nav-cta" id="reportBtn">Report a Lost Pet</button>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <svg class="icon"><use href="#icon-menu"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="https://www.facebook.com/EliteDroneRecovery">contact us</a>
+    <a href="#board">The Board</a>
+    <a href="#adopt">Adopt</a>
+    <a href="#donate">Pay</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <span class="eyebrow">We find</span>
+      <h1>We bring them home.</h1>
+      <p class="lede">At Elite Drone Recovery, we specialize in helping owners locate missing pets using advanced tracking methods and proven search strategies.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" id="reportBtnHero">Report a Lost Pet</button>
+       
+      </div>
+      <p class="hero-stat"><strong>7</strong> active searches right now · <strong>23</strong> reunions logged</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how">
+    <div class="wrap">
+      <div class="section-head center light">
+        <span class="eyebrow">The process</span>
+        <h2>From report to reunion</h2>
+        <p>Three steps, the same ones every case goes through — whether it's a cat gone overnight or a dog missing for a week.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="num">01 — FILE</span>
+          <h3>File the report</h3>
+          <p>Upload a photo, drop a pin on the last-seen spot, add a description. Takes about two minutes, and starts a live case.</p>
+        </div>
+        <div class="step">
+          <span class="num">02 — DISPATCH</span>
+          <h3>We go out</h3>
+          <p>An Elite Drone is dispatched to search for the missing pet.</p>
+        </div>
+        <div class="step">
+          <span class="num">03 — REUNITE</span>
+          <h3>We bring them home</h3>
+          <p>Found pets come straight back to you. If no owner turns up after a holding period, they move to our adoption list.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE BOARD -->
+  <section class="section board-section dark" id="board">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Live case feed</span>
+        <h2>The Board</h2>
+        <p>Every active search, sighting, and reunion, posted the way it would be on a telephone pole — just online, and updated as it happens.</p>
+      </div>
+
+      <div class="board-controls">
+        <div class="chips" id="chipRow">
+          <button class="chip active" data-filter="all">All cases</button>
+          <button class="chip" data-filter="active">Active search</button>
+          <button class="chip" data-filter="found">Found — seeking owner</button>
+          <button class="chip" data-filter="reunited">Reunited</button>
+        </div>
+      </div>
+
+      <div class="board-grid" id="boardGrid">
+
+        <article class="card" data-status="active">
+          <span class="pin"></span>
+          <div class="card-photo"><svg class="icon"><use href="#icon-paw"/></svg></div>
+          <span class="tag active">Active search</span>
+          <h4>Biscuit · Golden Retriever</h4>
+          <p class="meta">Last seen near Maple &amp; 9th, slipped out during a thunderstorm.</p>
+          <p class="case">CASE #02 · FILED 40M AGO</p>
+        </article>
+
+        <article class="card" data-status="active">
+          <span class="pin"></span>
+          <div class="card-photo"><svg class="icon"><use href="#icon-paw"/></svg></div>
+          <span class="tag active">Active search</span>
+          <h4>Luna · Tabby Cat</h4>
+          <p class="meta">Last seen around Oakwood Park, skittish around strangers.</p>
+          <p class="case">CASE #07 · FILED 5H AGO</p>
+        </article>
+
+        <article class="card" data-status="found">
+          <span class="pin"></span>
+          <div class="card-photo"><svg class="icon"><use href="#icon-paw"/></svg></div>
+          <span class="tag found">Found — seeking owner</span>
+          <h4>Unnamed · Terrier mix</h4>
+          <p class="meta">Found wandering Elm St, no collar. Friendly, microchip scan pending.</p>
+          <p class="case">CASE #04 · FILED 1D AGO</p>
+        </article>
+
+        <article class="card" data-status="reunited">
+          <span class="pin"></span>
+          <div class="card-photo"><svg class="icon"><use href="#icon-paw"/></svg></div>
+          <span class="tag reunited">Reunited</span>
+          <h4>Charlie · Mongrel</h4>
+          <p class="meta">Back with the Alvarez family after two nights out near the rail yard.</p>
+          <p class="case">CASE #05 · CLOSED YESTERDAY</p>
+        </article>
+
+        <article class="card" data-status="active">
+          <span class="pin"></span>
+          <div class="card-photo"><svg class="icon"><use href="#icon-paw"/></svg></div>
+          <span class="tag active">Active search</span>
+          <h4>Shadow · Lab mix</h4>
+          <p class="meta">Last seen near the river trail, responds to a whistle.</p>
+          <p class="case">CASE #11 · FILED 12M AGO</p>
+        </article>
+
+        <article class="card" data-status="reunited">
+          <span class="pin"></span>
+          <div class="card-photo"><svg class="icon"><use href="#icon-paw"/></svg></div>
+          <span class="tag reunited">Reunited</span>
+          <h4>Max · German Shepherd</h4>
+          <p class="meta">Found 11 days in, three streets over, hiding under a porch.</p>
+          <p class="case">CASE #01 · CLOSED 4D AGO</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ADOPT -->
+  <section class="section" id="adopt">
+    <div class="wrap">
+      <div class="section-head light">
+        <span class="eyebrow">Some don't get claimed</span>
+        <h2>Pets ready for a new home</h2>
+        <p>After the holding period passes with no owner found, these three are looking for a place to land.</p>
+      </div>
+      <div class="adopt-grid">
+
+        <div class="pet-card">
+          <div class="pet-photo"><svg class="icon"><use href="#icon-paw"/></svg></div>
+          <div class="pet-body">
+            <h4>Pepper</h4>
+            <p class="pet-tagline">Terrier mix · 2 years old · held 14 days</p>
+            <div class="pet-traits">
+              <span class="trait">House-trained</span>
+              <span class="trait">Loves laps</span>
+            </div>
+            <a href="#" class="pet-cta">Meet Pepper →</a>
+          </div>
+        </div>
+
+        <div class="pet-card">
+          <div class="pet-photo"><svg class="icon"><use href="#icon-paw"/></svg></div>
+          <div class="pet-body">
+            <h4>Juniper</h4>
+            <p class="pet-tagline">Domestic shorthair · 4 years old · held 21 days</p>
+            <div class="pet-traits">
+              <span class="trait">Independent</span>
+              <span class="trait">Good with kids</span>
+            </div>
+            <a href="#" class="pet-cta">Meet Juniper →</a>
+          </div>
+        </div>
+
+        <div class="pet-card">
+          <div class="pet-photo"><svg class="icon"><use href="#icon-paw"/></svg></div>
+          <div class="pet-body">
+            <h4>Otis</h4>
+            <p class="pet-tagline">Lab mix · 8 years old · held 9 days</p>
+            <div class="pet-traits">
+              <span class="trait">Gentle giant</span>
+              <span class="trait">Knows commands</span>
+            </div>
+            <a href="#" class="pet-cta">Meet Otis →</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="adopt-foot">
+        <a href="adopt.html" class="btn btn-outline" style="color:var(--ink);border-color:var(--ink);">See all adoptable pets</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONATE -->
+  <section class="section dark" id="donate">
+    <div class="wrap donate-grid">
+      <div class="donate-copy">
+        <span class="eyebrow">Funded by people who leave the light on</span>
+        <h2 style="font-family:var(--display);font-size:clamp(26px,3.6vw,38px);text-transform:uppercase;">Where the money goes</h2>
+        <p>No retainers, no volunteers. Every search is run by a paid team member, which only works because of donations and grants — not because it's free to do.</p>
+        <div class="fund-bar">
+          <div class="fund-seg ops"></div>
+          <div class="fund-seg care"></div>
+          <div class="fund-seg admin"></div>
+        </div>
+        <div class="fund-legend">
+          <span><i class="dot" style="background:var(--beacon)"></i>68% Search operations</span>
+          <span><i class="dot" style="background:var(--moss)"></i>22% Vet &amp; intake care</span>
+          <span><i class="dot" style="background:#6E7785"></i>10% Admin &amp; outreach</span>
+        </div>
+      </div>
+    <div class="donate-panel">
+        <span class="eyebrow">Make a donation</span>
+        <h3 style="font-family:var(--display);font-size:22px;text-transform:uppercase;">Send a team out tonight</h3>
+        <p style="font-size:14px;color:rgba(247,244,237,0.7);margin:14px 0 20px;">Choose your own amount — no preset tiers. Takes you to a dedicated donation page.</p>
+        <a href="donate.html" class="btn btn-primary" style="width:100%;justify-content:center;">Pay now →</a>
+      </div>
+    </div>
+
+    <a href="https://www.facebook.com/EliteDroneRecovery" class="floating-donate"> contact us </a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="brand">
+          <img class="mark-img" src="data:image/jpeg;base64,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" alt="Elite Drone Recovery">
+          <span class="word-stack">
+            <span class="word-main">ELITE</span>
+            <span class="word-sub">DRONE RECOVERY</span>
+          </span>
+        </a> 
+        <p>A paid rescue service that searches for your lost pets.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5>Site</h5>
+          <a href="#how">How it works</a>
+          <a href="#board">The Board</a>
+          <a href="#adopt">Adopt</a>
+          <a href="donate.html">Pay</a>
+        </div>
+        <div class="foot-col">
+          <h5>Contact</h5>
+          <a href="#">Report a lost pet</a>
+          <a href="https://www.facebook.com/EliteDroneRecovery">Contact us</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 ELITE DRONE RECOVERY</span>
+      <span>HOMEPAGE</span>
+    </div>
+  </div>
+</footer>
+
+<!-- REPORT MODAL -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <span class="eyebrow">Case intake</span>
+    <h3 id="modalTitle">Report a Lost Pet</h3>
+    <p class="note"></p>
+    <div class="field">
+      <label for="petName">Pet's name</label>
+      <input type="text" id="petName" placeholder="e.g. Biscuit">
+    </div>
+    <div class="field">
+      <label for="petPhoto">Photo</label>
+      <input type="file" id="petPhoto">
+    </div>
+    <div class="field">
+      <label for="lastSeen">Last seen location</label>
+      <input type="text" id="lastSeen" placeholder="Street, neighborhood, or drop a pin">
+    </div>
+    <div class="field">
+      <label for="petDesc">Description</label>
+      <textarea id="petDesc" rows="3" placeholder="Breed, color, collar, behavior..."></textarea>
+    </div>
+    <a class="btn btn-primary" type="button" id="modalSubmit" >Continue</a>
+  </div>
+</div>
+
+<script src="elite.js">
+ 
+</script>
+
+</body>
+</html>
