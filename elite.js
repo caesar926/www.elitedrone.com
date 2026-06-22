@@ -159,13 +159,20 @@
     }, 600);
   });
 
-   const floating = document.querySelector('.floating');
-  floating.addEventListener('click', () => {
-   
-    floating.textContent = 'Opening Facebook…';
+   const contactBtns = document.querySelectorAll('.floating-donates');
+
+contactBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.textContent = 'Opening Facebook…';
+
     setTimeout(() => {
-      window.open('https://www.facebook.com/EliteDroneRecrovery', '_blank', 'noopener');
-      floating.textContent = 'contact us'
-      closeModal();
+      window.open(
+        'https://www.facebook.com/EliteDroneRecrovery',
+        '_blank',
+        'noopener'
+      );
+
+      btn.textContent = 'Contact us';
     }, 600);
   });
+});
