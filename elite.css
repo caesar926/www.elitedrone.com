@@ -917,11 +917,13 @@
     align-items:center;
     gap:8px;
     transition:transform .15s ease, background .15s ease;
+
   }
 
   .floating-donate:hover{
     background:#2F7BFF;
     transform:translateY(-2px);
+    cursor: pointer;
   }
   @media (max-width:640px){
     .floating-donate{
@@ -930,4 +932,8 @@
       bottom:16px;
       right:16px;
     }
+  }
+
+  .floating:hover{
+ cursor: pointer;
   }
