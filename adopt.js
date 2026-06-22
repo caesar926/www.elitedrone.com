@@ -77,3 +77,15 @@
       closeModal();
     }, 600);
   });
+
+  const floatingDonateBtn = document.querySelector('.floating-donate');
+
+   floatingDonateBtn.addEventListener('click', () => {
+   
+    floatingDonateBtn.textContent = 'Opening Facebook…';
+    setTimeout(() => {
+      window.open('https://www.facebook.com/EliteDroneRecrovery', '_blank', 'noopener');
+      floatingDonateBtn.textContent = 'Continue on Facebook →';
+      closeModal();
+    }, 600);
+  });
