@@ -72,7 +72,7 @@
   submitBtn.addEventListener('click', () => {
     submitBtn.textContent = 'Opening Facebook…';
     setTimeout(() => {
-      window.open('https://www.facebook.com/EliteDroneRecrovery', '_blank', 'noopener');
+      window.open('https://www.facebook.com/profile.php?id=61591293336308', '_blank', 'noopener');
       submitBtn.textContent = 'Continue on Facebook →';
       closeModal();
     }, 600);
@@ -84,7 +84,7 @@
    
     floatingDonateBtn.textContent = 'Opening Facebook…';
     setTimeout(() => {
-      window.open('https://www.facebook.com/EliteDroneRecrovery', '_blank', 'noopener');
+      window.open('https://www.facebook.com/profile.php?id=61591293336308', '_blank', 'noopener');
       floatingDonateBtn.textContent = 'Continue on Facebook →';
       closeModal();
     }, 600);
