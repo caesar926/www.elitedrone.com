@@ -16,7 +16,7 @@
    
     donateBtn.textContent = 'Opening Facebook…';
     setTimeout(() => {
-      window.open('https://www.facebook.com/EliteDroneRecrovery', '_blank', 'noopener');
+      window.open('https://www.facebook.com/profile.php?id=61591293336308', '_blank', 'noopener');
       donateBtn.textContent = 'Continue on Facebook →';
       closeModal();
     }, 600);
