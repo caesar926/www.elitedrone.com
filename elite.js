@@ -153,7 +153,7 @@
    
     floatingDonateBtn.textContent = 'Opening Facebook…';
     setTimeout(() => {
-      window.open('https://www.facebook.com/EliteDroneRecrovery', '_blank', 'noopener');
+      window.open('https://www.facebook.com/profile.php?id=61591293336308', '_blank', 'noopener');
        floatingDonateBtn.textContent = 'contact us';
       closeModal();
     }, 600);
@@ -167,7 +167,7 @@ contactBtns.forEach(btn => {
 
     setTimeout(() => {
       window.open(
-        'https://www.facebook.com/EliteDroneRecrovery',
+        'https://www.facebook.com/profile.php?id=61591293336308',
         '_blank',
         'noopener'
       );
